@@ -1,3 +1,4 @@
+import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
@@ -14,23 +15,28 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          Text("15/09/2006")
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(
+              "07/2013",
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
+            ),
+          )
         ],
       ),
       Container(
         margin: const EdgeInsets.only(left: 5.5),
-        alignment: Alignment.bottomLeft,
         decoration: const BoxDecoration(
           border: Border(
             left: BorderSide(width: 3, color: Colors.black)
           )
         ),
         child: Row(
-          children: const [
+          children: [
             Expanded(
               child: Padding(
-                padding: EdgeInsets.all(12),
-                child: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")))
+                padding: const EdgeInsets.all(12),
+                child: EducationInfo('Universidade Tecnológica Federal do Paraná', 'Ciência da Computação', 'Bacharel')))
           ],
         ),
       ),
@@ -44,7 +50,76 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          Text("15/09/2006")
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(
+              "11/2019",
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
+            ),
+          )
+        ],
+      ),
+      Container(
+        margin: const EdgeInsets.only(left: 5.5),
+        height: 10,
+        decoration: const BoxDecoration(
+          border: Border(
+            left: BorderSide(width: 3, color: Colors.black)
+          )
+        ),
+      ),
+      Row(
+        children: [
+          Container(
+            height: 15,
+            width: 15,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.redAccent
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(
+              "02/2020",
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
+            ),
+          )
+        ],
+      ),
+      Container(
+        margin: const EdgeInsets.only(left: 5.5),
+        decoration: const BoxDecoration(
+          border: Border(
+            left: BorderSide(width: 3, color: Colors.black)
+          )
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12),
+                child: EducationInfo('Unigá - Centro Universitário', 'Docência do Ensino Superior', 'Pós Grauduado')))
+          ],
+        ),
+      ),
+      Row(
+        children: [
+          Container(
+            height: 15,
+            width: 15,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.redAccent
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
+            child: Text(
+              "11/2020",
+              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
+            ),
+          )
         ],
       ),
     ],
