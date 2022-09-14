@@ -2,7 +2,6 @@ import 'package:cv/models/job_experince.dart';
 import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:cv/presenter/widgets/timeline_item.dart';
 import 'package:flutter/material.dart';
-import 'package:timelines/timelines.dart';
 
 import 'job.dart';
 
@@ -79,10 +78,10 @@ Widget TimelineJobs(){
         dateInit: '06/2021', 
         dateFinish: 'Atualmente', 
         jobExperince: JobExperince(
-          'People Club - Home Office', 
-          'Desenvolvimento de aplicativos móveis e plataformas Web focadas em clube de benefícios para colaboradores, também dando manutenção em aplicações já feitas em IONIC e React JS, utilizando querys, mutations e fragments de GraphQL, Apollo Client em geral.', 
-          ['ReactJS', 'React Native', 'MobX', 'React Hooks', 'CSS', 'HTML', 'JavaScript', 'TypeScript', 'Ionic', 'Angular', 'GraphQL (querys, mutations, fragments e Apollo Client)', 'Flutter'], 
-          'Desenvolvedor mobile - Flutter'
+          'Softtek', 
+          'Desenvolvimento de aplicações móvéis, utilizando Flutter, Swift(iOS Nativo), Kotlin(Android Nativo) e Java com Spring Boot no backend', 
+          ['Flutter', 'Swift', 'Kotlin', 'Java', 'Spring Boot','CSS', 'HTML', 'JavaScript', 'TypeScript', 'React Native', 'ReactJS'], 
+          'Desenvolvedor Fullstack'
         ), 
         last: true
       ),

@@ -1,6 +1,5 @@
 import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:flutter/material.dart';
-import 'package:timelines/timelines.dart';
 
 Widget CustomTimeline(){
   return Column(
