@@ -5,9 +5,9 @@ List<Widget> RatingStars({required int stars, required int rating}){
   int i;
   for(i = 0; i < 5; i++){
     if(i - rating < 0){
-      starsRating.add(const Icon(Icons.square, color: Colors.red, size: 18.0,));
+      starsRating.add(const Icon(Icons.circle, color: Colors.red, size: 18.0,));
     } else{
-      starsRating.add(const Icon(Icons.square_outlined, color: Colors.red, size: 18.0));
+      starsRating.add(const Icon(Icons.circle_outlined, color: Colors.red, size: 18.0));
     }
   }
   return starsRating;
@@ -22,7 +22,6 @@ Widget LanguagesRating(String languageTitle, int score){
       children: [
         Text(
           languageTitle,
-          style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
         ),
         Row(
           children: [

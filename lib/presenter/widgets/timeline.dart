@@ -1,5 +1,6 @@
 import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget CustomTimeline(){
   return Column(
@@ -14,20 +15,19 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 8.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               "07/2013",
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],
       ),
       Container(
         margin: const EdgeInsets.only(left: 5.5),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 3, color: Colors.black)
+            left: BorderSide(width: 3, color: Get.theme.primaryColor)
           )
         ),
         child: Row(
@@ -53,7 +53,6 @@ Widget CustomTimeline(){
             padding: EdgeInsets.only(left: 8.0),
             child: Text(
               "11/2019",
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],
@@ -61,9 +60,9 @@ Widget CustomTimeline(){
       Container(
         margin: const EdgeInsets.only(left: 5.5),
         height: 10,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 3, color: Colors.black)
+            left: BorderSide(width: 3, color: Get.theme.primaryColor)
           )
         ),
       ),
@@ -77,20 +76,19 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 8.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               "02/2020",
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],
       ),
       Container(
         margin: const EdgeInsets.only(left: 5.5),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 3, color: Colors.black)
+            left: BorderSide(width: 3, color: Get.theme.primaryColor)
           )
         ),
         child: Row(
@@ -112,11 +110,10 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(left: 8.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               "11/2020",
-              style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],

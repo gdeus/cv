@@ -17,7 +17,7 @@ Widget TimelineJobs(){
           ['Documentação', 'Criação de UMLs', 'Suporte ao usuário'], 
           'Estagiário - Suporte Técnico'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '07/2015', 
@@ -28,7 +28,7 @@ Widget TimelineJobs(){
           ['PL/SQL', 'Oracle Forms', 'Oracle Reports', 'HTML/CSS'], 
           'Estagiário - Desenvolvimento de Sistemas'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '07/2016', 
@@ -39,7 +39,7 @@ Widget TimelineJobs(){
           ['Documentação', 'Levantamento de requisitos', 'Dicionários de dados'], 
           'Auxiliar'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '07/2016', 
@@ -50,7 +50,7 @@ Widget TimelineJobs(){
           ['HTML', 'CSS', 'JS', 'PHP'], 
           'Professor e Desenvolvedor'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '04/2019', 
@@ -61,7 +61,7 @@ Widget TimelineJobs(){
           ['ReactJS', 'React Native', 'MobX', 'React Hooks', 'CSS', 'HTML', 'JavaScript', 'TypeScript', 'Apollo Federation', 'GraphQL', 'Flutter'], 
           'Desenvolvedor Mobile e Web'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '06/2020', 
@@ -72,7 +72,7 @@ Widget TimelineJobs(){
           ['ReactJS', 'React Native', 'MobX', 'React Hooks', 'CSS', 'HTML', 'JavaScript', 'TypeScript', 'Ionic', 'Angular', 'GraphQL (querys, mutations, fragments e Apollo Client)', 'Flutter'], 
           'Desenvolvedor Mobile e Web'
         ), 
-        last: false
+        last: false, 
       ),
       TimelineItem(
         dateInit: '06/2021', 
@@ -83,7 +83,7 @@ Widget TimelineJobs(){
           ['Flutter', 'Swift', 'Kotlin', 'Java', 'Spring Boot','CSS', 'HTML', 'JavaScript', 'TypeScript', 'React Native', 'ReactJS'], 
           'Desenvolvedor Fullstack'
         ), 
-        last: true
+        last: true, 
       ),
     ],
   );

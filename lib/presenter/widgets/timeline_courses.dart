@@ -20,7 +20,6 @@ Widget TimelineCourses(String description, bool last){
             padding: const EdgeInsets.only(left: 15.0),
             child: Text(
               description,
-              style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           ),
         ],
@@ -31,7 +30,6 @@ Widget TimelineCourses(String description, bool last){
         child: Container(
           width: 3,
           height: 20,
-          color: Colors.black,
         ),
       ) : 
       Container()

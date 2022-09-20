@@ -14,7 +14,6 @@ Widget JobInfo(String title, String info){
         const SizedBox(height: 5),
         Text(
           info,
-          style: const TextStyle(color:  Colors.black, fontWeight: FontWeight.bold),
         ),
       ],
     ),

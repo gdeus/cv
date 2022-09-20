@@ -9,17 +9,16 @@ Widget LineIconHabilty(Hability hability) {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SizedBox(
-          width: 40,
-          height: 40,
+          width: 48,
+          height: 48,
           child: Image(
-            image: NetworkImage(hability.icon, scale: 1.0), 
-            fit: BoxFit.fill
+            image: NetworkImage(hability.icon), 
+            fit: BoxFit.cover
           ),
         ),
         const SizedBox(width: 15),
         Text(
           hability.name,
-          style: const TextStyle(color:  Colors.black, fontWeight: FontWeight.bold),
         )
       ],
     ),

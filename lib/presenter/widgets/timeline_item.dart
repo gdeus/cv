@@ -1,6 +1,6 @@
 import 'package:cv/models/job_experince.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'job.dart';
 
 Widget TimelineItem({required String dateInit, required String dateFinish, required JobExperince jobExperince, required bool last}){
@@ -20,16 +20,15 @@ Widget TimelineItem({required String dateInit, required String dateFinish, requi
             padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               dateInit,
-              style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],
       ),
       Container(
         margin: const EdgeInsets.only(left: 5.5),
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 3, color: Colors.black)
+            left: BorderSide(width: 3, color: Get.theme.primaryColor)
           )
         ),
         child: Row(
@@ -62,7 +61,6 @@ Widget TimelineItem({required String dateInit, required String dateFinish, requi
             padding: const EdgeInsets.only(left: 8.0),
             child: Text(
               dateFinish,
-              style: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold,),
             ),
           )
         ],
@@ -71,9 +69,9 @@ Widget TimelineItem({required String dateInit, required String dateFinish, requi
       Container(
         margin: const EdgeInsets.only(left: 5.5),
         height: 10,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           border: Border(
-            left: BorderSide(width: 3, color: Colors.black)
+            left: BorderSide(width: 3, color: Get.theme.primaryColor)
           )
         ),
       ) : Container()
