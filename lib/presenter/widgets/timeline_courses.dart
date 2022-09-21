@@ -16,18 +16,20 @@ Widget TimelineCourses(String description, bool last){
               color: Colors.redAccent
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 15.0),
-            child: Text(
-              description,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Text(
+                description,
+              ),
             ),
           ),
         ],
       ),
       !last ? 
-      Padding(
-        padding: const EdgeInsets.only(left: 5.5),
-        child: Container(
+      const Padding(
+        padding: EdgeInsets.only(left: 5.5),
+        child: SizedBox(
           width: 3,
           height: 20,
         ),

@@ -14,58 +14,75 @@ import 'package:get/get.dart';
 
 Widget Mobile(BuildContext context) {
   final CVScreenController c = Get.put(CVScreenController());
-  return Column(
-    children: [
-      Row(
-                  children: [
-                    const SizedBox(
-                      child: CircleAvatar(
-                          radius: 120,
-                          backgroundColor: Colors.redAccent,
-                          child: CircleAvatar(
-                            radius: 115,
-                            backgroundImage: NetworkImage(
-                                'https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.6435-9/43574628_2028090100586600_714769715825737728_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHR9vSNaC_FTfFDYkN8yAoZZFZlUmP5LRBkVmVSY_ktELJZbdZm0nLMUz-gAuBACXNJOVyqdToeJUWl-avoro-b&_nc_ohc=ZCkgeNJKeCMAX9kyJ2X&_nc_ht=scontent.fsdu5-1.fna&oh=00_AT8AuyK2G4EmREDqW_CB6GT1SuqwFnHs0beDfXgqG2emuA&oe=633FA731'),
-                          )),
-                    ),
-                    const SizedBox(width: 100),
-                    RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          const TextSpan(
-                              text: 'Gabriel ',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 50.0,
-                                  color: Colors.redAccent)),
-                          TextSpan(
-                              text: 'Augusto de Deus',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 50.0,
-                                  color: context.theme.primaryColor)),
-                          TextSpan(
-                              text: '\nDesenvolvedor',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 50.0,
-                                  color: context.theme.primaryColor)),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-      Padding(
-          padding:
-              const EdgeInsets.symmetric(vertical: 8.0),
-          child: TitleWithBorderBottom('CONTATO'),
+  return Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          alignment: Alignment.center,
+          child: const CircleAvatar(
+              radius: 60,
+              backgroundColor: Colors.redAccent,
+              child: CircleAvatar(
+                radius: 55,
+                backgroundImage: NetworkImage(
+                    'https://scontent.fsdu5-1.fna.fbcdn.net/v/t1.6435-9/43574628_2028090100586600_714769715825737728_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHR9vSNaC_FTfFDYkN8yAoZZFZlUmP5LRBkVmVSY_ktELJZbdZm0nLMUz-gAuBACXNJOVyqdToeJUWl-avoro-b&_nc_ohc=ZCkgeNJKeCMAX9kyJ2X&_nc_ht=scontent.fsdu5-1.fna&oh=00_AT8AuyK2G4EmREDqW_CB6GT1SuqwFnHs0beDfXgqG2emuA&oe=633FA731'),
+              )),
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Icon(
+              Icons.sunny,
+            ),
+            Switch(
+              onChanged: (value){
+                c.changeTheme(value);
+                Get.changeThemeMode(c.isLightTheme.value ? ThemeMode.dark : ThemeMode.light);
+                print(c.isLightTheme.value);
+              },
+              value: c.isLightTheme.value, 
+            ),
+            const Icon(
+              Icons.brightness_2_outlined
+            ),
+          ],
+        ),
+        const SizedBox(width: 100),
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: <TextSpan>[
+              const TextSpan(
+                  text: 'Gabriel ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50.0,
+                      color: Colors.redAccent)),
+              TextSpan(
+                  text: 'Augusto de Deus',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50.0,
+                      color: context.theme.primaryColor)),
+              TextSpan(
+                  text: '\nDesenvolvedor',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50.0,
+                      color: context.theme.primaryColor)),
+            ],
+          ),
         ),
         PersonalInfos('Nome', 'Gabriel Augusto de Deus'),
         PersonalInfos('Celular', '(45) 99837-2384'),
         PersonalInfos('E-mail', 'dedeus.gabriel@gmail.com'),
-        PersonalInfos(
-            'Cidade', 'São Miguel do Iguaçu - PR'),
+        PersonalInfos('Cidade', 'São Miguel do Iguaçu - PR'),
         PersonalInfos('Estado Civil', 'Solteiro'),
+        TitleWithBorderBottom('CONTATO'),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 8.0),
@@ -120,33 +137,6 @@ Widget Mobile(BuildContext context) {
         LineIconHabilty(Hability(
             'https://img.icons8.com/ios-filled/50/000000/ios-logo.png',
             'iOS')),
-        LineIconHabilty(Hability(
-            'https://img.icons8.com/ios-filled/50/000000/ios-logo.png',
-            c.isLightTheme.toString())),
-        Padding(
-          padding:
-              const EdgeInsets.symmetric(vertical: 8.0),
-          child: TitleWithBorderBottom('TO PDF'),
-        ),
-        GestureDetector(
-          child: Container(
-            width: 80,
-            height: 80,
-            color: Colors.black,
-          ),
-          onTap: () {
-            Get.changeThemeMode(c.isLightTheme.value
-                ? ThemeMode.dark
-                : ThemeMode.light);
-            c.changeTheme();
-            if (c.isLightTheme.isTrue) {
-              print('é darkmode');
-            } else {
-              print('não é');
-            }
-            print(Get.theme.primaryColor);
-          },
-        ),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 8.0),
@@ -179,6 +169,7 @@ Widget Mobile(BuildContext context) {
               'EXPERIÊNCIAS PESSOAIS'),
         ),
         TimelinePersonalXP()
-    ],
+      ],
+    ),
   );
 }

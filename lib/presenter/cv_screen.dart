@@ -21,7 +21,7 @@ class CVScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
-          if (constraints.maxWidth > 600) {
+          if (constraints.maxWidth <= 900) {
             return Obx(() => Mobile(context));
           }
           return Obx(
@@ -163,7 +163,6 @@ class CVScreen extends StatelessWidget {
                                 Get.changeThemeMode(c.isLightTheme.value
                                     ? ThemeMode.dark
                                     : ThemeMode.light);
-                                c.changeTheme();
                                 if (c.isLightTheme.isTrue) {
                                   print('é darkmode');
                                 } else {

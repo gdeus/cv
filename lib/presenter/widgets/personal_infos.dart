@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget PersonalInfos(String title, String info){
-  return Padding(
+  return Container(
     padding: const EdgeInsets.symmetric(vertical: 6.0),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
