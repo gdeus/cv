@@ -1,9 +1,6 @@
 import 'package:cv/models/job_experince.dart';
-import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:cv/presenter/widgets/timeline_item.dart';
 import 'package:flutter/material.dart';
-
-import 'job.dart';
 
 Widget TimelineJobs(){
   return Column(

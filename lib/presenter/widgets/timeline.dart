@@ -15,8 +15,8 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
             child: Text(
               "07/2013",
             ),
@@ -76,8 +76,8 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
             child: Text(
               "02/2020",
             ),
@@ -110,8 +110,8 @@ Widget CustomTimeline(){
               color: Colors.redAccent
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0),
+          const Padding(
+            padding: EdgeInsets.only(left: 8.0),
             child: Text(
               "11/2020",
             ),

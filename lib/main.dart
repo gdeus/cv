@@ -6,35 +6,30 @@ void main() {
   runApp(const MyApp());
 }
 
-  const textThemeDark = TextTheme(
-    bodyText2: TextStyle(
-      color: Colors.white,
-    ),
-  );
-
-  const textThemeLigth = TextTheme(
-    bodyText2: TextStyle(
-      color: Colors.black,
-      fontWeight: FontWeight.bold
-    ),
-  );
-
 ThemeData _escuridao = ThemeData(
     scaffoldBackgroundColor: Colors.grey[900],
-    textTheme: textThemeDark,
-    primaryColor: Colors.white
-  );
+    textTheme: const TextTheme(
+      bodyText2: TextStyle(
+        color: Colors.white,
+      ),
+    ),
+  primaryColor: Colors.white
+);
 
 ThemeData _luz = ThemeData(
     scaffoldBackgroundColor: Colors.grey[300],
-    textTheme: textThemeLigth,
+    textTheme: const TextTheme(
+      bodyText2: TextStyle(
+        color: Colors.black,
+        fontWeight: FontWeight.bold
+      ),
+    ),
     primaryColor: Colors.black
   );
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -45,3 +40,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

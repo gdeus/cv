@@ -1,4 +1,3 @@
-import 'package:cv/presenter/widgets/personal_infos.dart';
 import 'package:flutter/material.dart';
 
 import 'info_job.dart';

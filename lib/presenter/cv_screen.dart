@@ -217,6 +217,20 @@ class CVScreen extends StatelessWidget {
                           ],
                         ),
                       ),
+                      const Icon(
+                        Icons.sunny,
+                      ),
+                      Switch(
+                        onChanged: (value){
+                          c.changeTheme(value);
+                          Get.changeThemeMode(c.isLightTheme.value ? ThemeMode.dark : ThemeMode.light);
+                          print(c.isLightTheme.value);
+                        },
+                        value: c.isLightTheme.value, 
+                      ),
+                      const Icon(
+                        Icons.brightness_2_outlined
+                      ),
                     ],
                   ),
                 )
