@@ -51,30 +51,32 @@ Widget Mobile(BuildContext context) {
             ),
           ],
         ),
-        const SizedBox(width: 100),
-        RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            children: <TextSpan>[
-              const TextSpan(
-                  text: 'Gabriel ',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
-                      color: Colors.redAccent)),
-              TextSpan(
-                  text: 'Augusto de Deus',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
-                      color: context.theme.primaryColor)),
-              TextSpan(
-                  text: '\nDesenvolvedor',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50.0,
-                      color: context.theme.primaryColor)),
-            ],
+        Container(
+          alignment: Alignment.center,
+          child: RichText(
+            textAlign: TextAlign.center,
+            text: TextSpan(
+              children: <TextSpan>[
+                const TextSpan(
+                    text: 'Gabriel ',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                        color: Colors.redAccent)),
+                TextSpan(
+                    text: 'Augusto de Deus',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                        color: context.theme.primaryColor)),
+                TextSpan(
+                    text: '\nDesenvolvedor',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 50.0,
+                        color: context.theme.primaryColor)),
+              ],
+            ),
           ),
         ),
         PersonalInfos('Nome', 'Gabriel Augusto de Deus'),
