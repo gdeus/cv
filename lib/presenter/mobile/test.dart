@@ -79,12 +79,12 @@ Widget Mobile(BuildContext context) {
             ),
           ),
         ),
+        TitleWithBorderBottom('CONTATO'),
         PersonalInfos('Nome', 'Gabriel Augusto de Deus'),
         PersonalInfos('Celular', '(45) 99837-2384'),
         PersonalInfos('E-mail', 'dedeus.gabriel@gmail.com'),
         PersonalInfos('Cidade', 'São Miguel do Iguaçu - PR'),
         PersonalInfos('Estado Civil', 'Solteiro'),
-        TitleWithBorderBottom('CONTATO'),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 8.0),
