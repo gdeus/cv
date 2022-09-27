@@ -1,6 +1,12 @@
 import 'package:cv/presenter/cv_screen.dart';
+import 'package:cv/presenter/cv_screen_bindings.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'domain/usecase/get_cv_usecase.dart';
+import 'external/get_cv_datasource.dart';
+import 'infra/repositories/get_cv_repository_impl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +43,14 @@ class MyApp extends StatelessWidget {
       theme: _luz,
       darkTheme: _escuridao,
       home: CVScreen(),
+      initialBinding: BindingsBuilder((){
+        Get.lazyPut<GetCVUsecaseImpl>((){
+          final Dio dio = Dio();
+          final GetCVDatasourceImpl datasource = GetCVDatasourceImpl(dio);
+          final GetCVRepositoryImpl repository = GetCVRepositoryImpl(datasource);
+          return GetCVUsecaseImpl(repository);
+        });
+      }),
     );
   }
 }
