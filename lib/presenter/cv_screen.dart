@@ -26,17 +26,21 @@ class CVScreen extends StatelessWidget {
           if (constraints.maxWidth <= 900) {
             return Obx(() => Mobile(context));
           }
-          return Obx((){
+          return Obx(() {
             var state = c.state.value;
-            if(c.state.value is hook.LoadingState){
-              return const Center(child: CircularProgressIndicator(),);
+            if (state is hook.LoadingState) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
             }
-            if(c.state.value is hook.SuccessState){
-              return WebContent(context); 
+            if (state is hook.SuccessState) {
+              return WebContent(context, state.cvInfo);
             }
-            return const Center(child: Text('Error State'),);
-          }
-          );
+            if(state is hook.ErrorState){
+              return const Center(child: Text('Error State'));
+            }
+            return const Center(child: Text('Qualquer bosta'));
+          });
         }),
       ),
     );

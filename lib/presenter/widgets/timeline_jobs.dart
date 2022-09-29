@@ -1,20 +1,21 @@
+import 'package:cv/domain/entities/experince.dart';
 import 'package:cv/models/job_experince.dart';
 import 'package:cv/presenter/widgets/timeline_item.dart';
 import 'package:flutter/material.dart';
 
-Widget TimelineJobs(){
+Widget TimelineJobs(List<Expirence> listExpirences){
   return Column(
     children: [
       TimelineItem(
-        dateInit: '07/2014', 
-        dateFinish: '06/2015', 
+        dateInit: listExpirences[0].initDate, 
+        dateFinish: listExpirences[0].finishData, 
         jobExperince: JobExperince(
-          'Frimesa Cooperativa Central - Medianeira - PR', 
-          'Principais atividades: Atendimento aos usuários dos sistemas Frimesa, colaboradores internos, vendedores externos e fornecedores.', 
-          ['Documentação', 'Criação de UMLs', 'Suporte ao usuário'], 
-          'Estagiário - Suporte Técnico'
+          listExpirences[0].company, 
+          listExpirences[0].desc,
+          listExpirences[0].technologies, 
+          listExpirences[0].office,
         ), 
-        last: false, 
+        last: listExpirences[0].last, 
       ),
       TimelineItem(
         dateInit: '07/2015', 

@@ -1,3 +1,4 @@
+import 'package:cv/domain/entities/language.dart';
 import 'package:flutter/material.dart';
 
 List<Widget> RatingStars({required int stars, required int rating}){
@@ -13,7 +14,7 @@ List<Widget> RatingStars({required int stars, required int rating}){
   return starsRating;
 }
 
-Widget LanguagesRating(String languageTitle, int score){
+Widget LanguagesRating(Language language){
   return Padding(
     padding: const EdgeInsets.symmetric(vertical: 5.0),
     child: Row(
@@ -21,11 +22,11 @@ Widget LanguagesRating(String languageTitle, int score){
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          languageTitle,
+          language.language,
         ),
         Row(
           children: [
-            ...RatingStars(rating: score, stars: 5)
+            ...RatingStars(rating: language.rating, stars: 5)
           ],
         ),
         

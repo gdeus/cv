@@ -18,7 +18,6 @@ class CVScreenController extends GetxController{
     final GetCVRepositoryImpl repository = GetCVRepositoryImpl(datasource);
     return GetCVUsecaseImpl(repository);
   });
-  var cvInfo = CVInfo.obs;
   final usecase = Get.find<GetCVUsecaseImpl>();
 
   setState(CVInfoState newState) {
@@ -33,7 +32,6 @@ class CVScreenController extends GetxController{
       setState(ErrorState(l));
     },
     (r){
-      cvInfo.value = r;
       setState(SuccessState(r));
     });
   }

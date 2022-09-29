@@ -1,4 +1,4 @@
-import 'package:cv/presenter/widgets/hability.dart';
+import 'package:cv/domain/entities/hability.dart';
 import 'package:flutter/material.dart';
 
 Widget LineIconHabilty(Hability hability) {
@@ -18,7 +18,7 @@ Widget LineIconHabilty(Hability hability) {
         ),
         const SizedBox(width: 15),
         Text(
-          hability.name,
+          hability.hability,
         )
       ],
     ),

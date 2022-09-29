@@ -1,7 +1,8 @@
+import 'package:cv/domain/entities/course.dart';
 import 'package:cv/presenter/widgets/education_info.dart';
 import 'package:flutter/material.dart';
 
-Widget TimelineCourses(String description, bool last){
+Widget TimelineCourses(Course course){
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -20,13 +21,13 @@ Widget TimelineCourses(String description, bool last){
             child: Padding(
               padding: const EdgeInsets.only(left: 15.0),
               child: Text(
-                description,
+                course.name,
               ),
             ),
           ),
         ],
       ),
-      !last ? 
+      !course.end ? 
       const Padding(
         padding: EdgeInsets.only(left: 5.5),
         child: SizedBox(

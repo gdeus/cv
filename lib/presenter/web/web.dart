@@ -12,9 +12,10 @@ import 'package:cv/presenter/widgets/title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../domain/entities/cv_info.dart';
 import '../widgets/line_icon_hability.dart';
 
-Widget WebContent(BuildContext context){
+Widget WebContent(BuildContext context, CVInfo cvInfo){
   final CVScreenController c = Get.put(CVScreenController());
 return Padding(
               padding: const EdgeInsets.all(80.0),
@@ -76,92 +77,37 @@ return Padding(
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: TitleWithBorderBottom('CONTATO'),
                             ),
-                            PersonalInfos('Nome', 'Gabriel Augusto de Deus'),
-                            PersonalInfos('Celular', '(45) 99837-2384'),
-                            PersonalInfos('E-mail', 'dedeus.gabriel@gmail.com'),
-                            PersonalInfos(
-                                'Cidade', 'São Miguel do Iguaçu - PR'),
-                            PersonalInfos('Estado Civil', 'Solteiro'),
+                            PersonalInfos('Nome', cvInfo.personalInfos.name),
+                            PersonalInfos('Celular', cvInfo.personalInfos.phone),
+                            PersonalInfos('E-mail', cvInfo.personalInfos.email),
+                            PersonalInfos('Cidade', cvInfo.personalInfos.city),
+                            PersonalInfos('Estado Civil', cvInfo.personalInfos.martialStatus),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: TitleWithBorderBottom('IDIOMAS'),
                             ),
-                            LanguagesRating('PORTUGUÊS', 5),
-                            LanguagesRating('INGLÊS', 3),
+                            LanguagesRating(cvInfo.languages[0]),
+                            LanguagesRating(cvInfo.languages[1]),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 8.0),
                               child: TitleWithBorderBottom('HABILIDADES'),
                             ),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/flutter.png',
-                                'Flutter')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/dart.png',
-                                'Dart')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/javascript--v1.png',
-                                'Javascript')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/fluency/48/000000/typescript.png',
-                                'Typescript')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/react-native.png',
-                                'ReactJS e Native')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/html-5--v1.png',
-                                'HTML')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/dusk/48/000000/css3.png',
-                                'CSS')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png',
-                                'Java')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/kotlin.png',
-                                'Kotlin')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/android-os.png',
-                                'Android')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/firebase.png',
-                                'Firebase')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/office/48/000000/spring-logo.png',
-                                'Spring boot')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/color/48/000000/swift.png',
-                                'Swift')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/ios-filled/50/000000/ios-logo.png',
-                                'iOS')),
-                            LineIconHabilty(Hability(
-                                'https://img.icons8.com/ios-filled/50/000000/ios-logo.png',
-                                c.isLightTheme.toString())),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 8.0),
-                              child: TitleWithBorderBottom('TO PDF'),
-                            ),
-                            GestureDetector(
-                              child: Container(
-                                width: 80,
-                                height: 80,
-                                color: Colors.black,
-                              ),
-                              onTap: () {
-                                Get.changeThemeMode(c.isLightTheme.value
-                                    ? ThemeMode.dark
-                                    : ThemeMode.light);
-                                if (c.isLightTheme.isTrue) {
-                                  print('é darkmode');
-                                } else {
-                                  print('não é');
-                                }
-                                print(Get.theme.primaryColor);
-                              },
-                            )
+                            LineIconHabilty(cvInfo.habilitys[0]),
+                            LineIconHabilty(cvInfo.habilitys[1]),
+                            LineIconHabilty(cvInfo.habilitys[2]),
+                            LineIconHabilty(cvInfo.habilitys[3]),
+                            LineIconHabilty(cvInfo.habilitys[4]),
+                            LineIconHabilty(cvInfo.habilitys[5]),
+                            LineIconHabilty(cvInfo.habilitys[6]),
+                            LineIconHabilty(cvInfo.habilitys[7]),
+                            LineIconHabilty(cvInfo.habilitys[8]),
+                            LineIconHabilty(cvInfo.habilitys[9]),
+                            LineIconHabilty(cvInfo.habilitys[10]),
+                            LineIconHabilty(cvInfo.habilitys[11]),
+                            LineIconHabilty(cvInfo.habilitys[12]),
+                            LineIconHabilty(cvInfo.habilitys[13]),
                           ],
                         ),
                       ),
@@ -183,21 +129,15 @@ return Padding(
                                   const EdgeInsets.symmetric(vertical: 15.0),
                               child: TitleWithBorderBottom('CURSOS'),
                             ),
-                            TimelineCourses(
-                                'Flutter: Aprendendo tudo sobre design - Prof: Jacob Moura - Plataforma: Udemy.',
-                                false),
-                            TimelineCourses(
-                                'Criação de Apps Android e iOS com Flutter - Prof: Daniel Ciolfi - Plataforma: Udemy.',
-                                false),
-                            TimelineCourses(
-                                'Dart Lang do básico ao avançado - Prof: Fernando Martins - Plataforma: Udemy.',
-                                true),
+                            TimelineCourses(cvInfo.courses[0]),
+                            TimelineCourses(cvInfo.courses[1]),
+                            TimelineCourses(cvInfo.courses[2]),
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(vertical: 15.0),
                               child: TitleWithBorderBottom('EXPERIÊNCIAS'),
                             ),
-                            TimelineJobs(),
+                            TimelineJobs(cvInfo.expirences),
                             Padding(
                               padding: const EdgeInsets.only(top: 15.0),
                               child: TitleWithBorderBottom(
