@@ -7,6 +7,8 @@ import 'hability.dart';
 import 'language.dart';
 
 class CVInfo {
+  static var obs;
+
   CVInfo({
     required this.personalInfos,
     required this.languages,
