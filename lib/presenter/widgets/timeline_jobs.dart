@@ -4,86 +4,22 @@ import 'package:cv/presenter/widgets/timeline_item.dart';
 import 'package:flutter/material.dart';
 
 Widget TimelineJobs(List<Expirence> listExpirences){
-  return Column(
-    children: [
-      TimelineItem(
-        dateInit: listExpirences[0].initDate, 
-        dateFinish: listExpirences[0].finishData, 
+  return ListView.builder(
+    physics: const NeverScrollableScrollPhysics(),
+    shrinkWrap: true,
+    itemCount: listExpirences.length,
+    itemBuilder: (BuildContext context, int index) {
+      return TimelineItem(
+        dateInit: listExpirences[index].initDate, 
+        dateFinish: listExpirences[index].finishData, 
         jobExperince: JobExperince(
-          listExpirences[0].company, 
-          listExpirences[0].desc,
-          listExpirences[0].technologies, 
-          listExpirences[0].office,
+          listExpirences[index].company, 
+          listExpirences[index].desc,
+          listExpirences[index].technologies, 
+          listExpirences[index].office,
         ), 
-        last: listExpirences[0].last, 
-      ),
-      TimelineItem(
-        dateInit: '07/2015', 
-        dateFinish: '07/2016', 
-        jobExperince: JobExperince(
-          'Frimesa Cooperativa Central - Medianeira - PR', 
-          'Desenvolvimento de sistemas utilizando tecnologias Oracle, como, Oracle EBS, Oracle Forms e rotinas PL/SQL.', 
-          ['PL/SQL', 'Oracle Forms', 'Oracle Reports', 'HTML/CSS'], 
-          'Estagiário - Desenvolvimento de Sistemas'
-        ), 
-        last: false, 
-      ),
-      TimelineItem(
-        dateInit: '07/2016', 
-        dateFinish: '07/2017', 
-        jobExperince: JobExperince(
-          'Frimesa Cooperativa Central - Medianeira - PR', 
-          'Auxiliava consultores em produtos Oracle, com criação de dicionário de dados, manuais e diversos auxílios técnicos..', 
-          ['Documentação', 'Levantamento de requisitos', 'Dicionários de dados'], 
-          'Auxiliar'
-        ), 
-        last: false, 
-      ),
-      TimelineItem(
-        dateInit: '07/2016', 
-        dateFinish: '07/2017', 
-        jobExperince: JobExperince(
-          'Mineweb - Medianeira - PR', 
-          'Aulas de lógica de programação, criação de websites e robótica para crianças e adolescentes de 4 a 15 anos. Desenvolvimento de sistemas internos como chamada cadastro de turmas, e um Banco para estudantes.', 
-          ['HTML', 'CSS', 'JS', 'PHP'], 
-          'Professor e Desenvolvedor'
-        ), 
-        last: false, 
-      ),
-      TimelineItem(
-        dateInit: '04/2019', 
-        dateFinish: '06/2020', 
-        jobExperince: JobExperince(
-          'Wealth Systems - Medianeira - PR', 
-          'Desenvolvedor mobile e Web - React Native e ReactJS. Principais atividades: Desenvolvimento de aplicações móveis e Webs para uso interno na empresa e clientes.', 
-          ['ReactJS', 'React Native', 'MobX', 'React Hooks', 'CSS', 'HTML', 'JavaScript', 'TypeScript', 'Apollo Federation', 'GraphQL', 'Flutter'], 
-          'Desenvolvedor Mobile e Web'
-        ), 
-        last: false, 
-      ),
-      TimelineItem(
-        dateInit: '06/2020', 
-        dateFinish: '05/2021', 
-        jobExperince: JobExperince(
-          'People Club - Home Office', 
-          'Desenvolvimento de aplicativos móveis e plataformas Web focadas em clube de benefícios para colaboradores, também dando manutenção em aplicações já feitas em IONIC e React JS, utilizando querys, mutations e fragments de GraphQL, Apollo Client em geral.', 
-          ['ReactJS', 'React Native', 'MobX', 'React Hooks', 'CSS', 'HTML', 'JavaScript', 'TypeScript', 'Ionic', 'Angular', 'GraphQL (querys, mutations, fragments e Apollo Client)', 'Flutter'], 
-          'Desenvolvedor Mobile e Web'
-        ), 
-        last: false, 
-      ),
-      TimelineItem(
-        dateInit: '06/2021', 
-        dateFinish: 'Atualmente', 
-        jobExperince: JobExperince(
-          'Softtek', 
-          'Desenvolvimento de aplicações móvéis, utilizando Flutter, Swift(iOS Nativo), Kotlin(Android Nativo) e Java com Spring Boot no backend', 
-          ['Flutter', 'Swift', 'Kotlin', 'Java', 'Spring Boot','CSS', 'HTML', 'JavaScript', 'TypeScript', 'React Native', 'ReactJS'], 
-          'Desenvolvedor Fullstack'
-        ), 
-        last: true, 
-      ),
-    ],
-  );
+        last: listExpirences[index].last, 
+      );
+  }); 
 }
 
