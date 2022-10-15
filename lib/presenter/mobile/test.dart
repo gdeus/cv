@@ -91,27 +91,25 @@ Widget Mobile(BuildContext context, CVInfo cvInfo) {
               const EdgeInsets.symmetric(vertical: 8.0),
           child: TitleWithBorderBottom('IDIOMAS'),
         ),
-        LanguagesRating(cvInfo.languages[0]),
-        LanguagesRating(cvInfo.languages[1]),
+         ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: cvInfo.languages.length,
+            itemBuilder: (BuildContext context, int index) {
+              return LanguagesRating(cvInfo.languages[index]);
+          }),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 8.0),
           child: TitleWithBorderBottom('HABILIDADES'),
         ),
-          LineIconHabilty(cvInfo.habilitys[0]),
-          LineIconHabilty(cvInfo.habilitys[1]),
-          LineIconHabilty(cvInfo.habilitys[2]),
-          LineIconHabilty(cvInfo.habilitys[3]),
-          LineIconHabilty(cvInfo.habilitys[4]),
-          LineIconHabilty(cvInfo.habilitys[5]),
-          LineIconHabilty(cvInfo.habilitys[6]),
-          LineIconHabilty(cvInfo.habilitys[7]),
-          LineIconHabilty(cvInfo.habilitys[8]),
-          LineIconHabilty(cvInfo.habilitys[9]),
-          LineIconHabilty(cvInfo.habilitys[10]),
-          LineIconHabilty(cvInfo.habilitys[11]),
-          LineIconHabilty(cvInfo.habilitys[12]),
-          LineIconHabilty(cvInfo.habilitys[13]),
+          ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: cvInfo.habilitys.length,
+            itemBuilder: (BuildContext context, int index) {
+              return LineIconHabilty(cvInfo.habilitys[index]);
+          }),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 8.0),
@@ -123,9 +121,13 @@ Widget Mobile(BuildContext context, CVInfo cvInfo) {
               const EdgeInsets.symmetric(vertical: 15.0),
           child: TitleWithBorderBottom('CURSOS'),
         ),
-        TimelineCourses(cvInfo.courses[0]),
-        TimelineCourses(cvInfo.courses[1]),
-        TimelineCourses(cvInfo.courses[2]),
+        ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          itemCount: cvInfo.courses.length,
+          itemBuilder: (BuildContext context, int index) {
+            return TimelineCourses(cvInfo.courses[index]);
+        }),
         Padding(
           padding:
               const EdgeInsets.symmetric(vertical: 15.0),

@@ -21,6 +21,7 @@ class CVScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const ScrollPhysics(),
           child: Obx(() {
             var state = c.state.value;
             if (state is hook.LoadingState) {
